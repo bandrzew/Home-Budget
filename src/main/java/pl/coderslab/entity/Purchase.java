@@ -1,6 +1,7 @@
 package pl.coderslab.entity;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -22,10 +23,9 @@ public class Purchase {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
+	private String month;
 	@NotEmpty(message = "brak nazwy")
 	private String name;
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date dateTime;
 	@CreationTimestamp
 	private Date created;
 	@Column(scale = 2)
@@ -36,16 +36,16 @@ public class Purchase {
 
 	@Override
 	public String toString() {
-		return String.format("Purchase [id=%s, dateTime=%s, created=%s, price=%s, name=%s, description=%s]", id,
-				dateTime, created, price, name, description);
+		return String.format("Purchase [id=%s, month=%s, name=%s, created=%s, price=%s, description=%s]", id, month,
+				name, created, price, description);
 	}
 
-	public Date getDateTime() {
-		return dateTime;
+	public String getMonth() {
+		return month;
 	}
 
-	public void setDateTime(Date dateTime) {
-		this.dateTime = dateTime;
+	public void setMonth(String month) {
+		this.month = month;
 	}
 
 	public Date getCreated() {
