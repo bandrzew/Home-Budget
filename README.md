@@ -4,5 +4,5 @@ Project made for personal use. Allows easier control over my roommate's and mine
 
 Sections:
 - Purchases - adding a single purchase depending on purchaser or to a common budget
-- Sallary - yes, please  :smirk:
+- Sallary
 - Summary 
