@@ -6,24 +6,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>purchase list</title>
+<title>paycheck list</title>
 </head>
 <body>
-	<h1>List of purchases</h1>
+	<h1>List of paychecks</h1>
 	<table>
-		<c:forEach items="${purchases}" var="purchase">
+		<c:forEach items="${paychecks}" var="paycheck">
 			<tr>
-				<td>${purchase.month}</td>
-				<td>${purchase.price}</td>
-				<td>${purchase.name}</td>
-				<td>${purchase.description}</td>
+				<td>${paycheck.month}</td>
+				<td>${paycheck.value}</td>
+				<td>${paycheck.description}</td>
 			</tr>
 		</c:forEach>
 	</table>
 	<a id="summary" href="http://localhost:8080/Home-Budget/">summary</a>
 	<br>
 	<a id="paycheckForm" class="form"
-		href="http://localhost:8080/Home-Budget/purchase/form">purchase
+		href="http://localhost:8080/Home-Budget/paycheck/form">paycheck
 		form</a>
 </body>
 </html>

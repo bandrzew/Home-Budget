@@ -7,23 +7,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>purchase form</title>
+<title>paycheck form</title>
 </head>
 <body>
-	<form:form method="post" modelAttribute="purchase">
+	<form:form method="post" modelAttribute="paycheck">
 		<div>
 			month<br>
 			<form:select path="month" items="${months}" />
 		</div>
+
 		<div>
-			name<br>
-			<form:input path="name" />
-			<form:errors path="name" />
-		</div>
-		<div>
-			price<br>
-			<form:input type="number" step="0.01" path="price" />
-			<form:errors path="price" />
+			value<br>
+			<form:input type="number" step="0.01" path="value" />
+			<form:errors path="value" />
 		</div>
 		<div>
 			description<br>
@@ -37,7 +33,7 @@
 	<a id="summary" href="http://localhost:8080/Home-Budget/">summary</a>
 	<br>
 	<a id="purchaseList" class="list"
-		href="http://localhost:8080/Home-Budget/purchase/list">purchase
+		href="http://localhost:8080/Home-Budget/paycheck/list">paycheck
 		list</a>
 </body>
 </html>
