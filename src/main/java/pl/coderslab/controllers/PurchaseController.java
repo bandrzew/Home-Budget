@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import pl.coderslab.entity.Purchase;
 import pl.coderslab.model.Months;
+import pl.coderslab.model.PurchaseDto;
 import pl.coderslab.repository.PurchaseRepository;
 
 @Controller
@@ -39,7 +40,16 @@ public class PurchaseController {
 	}
 
 	@GetMapping("/list")
-	public String list() {
+	public String list(Model model) {
+		model.addAttribute("purchaseDto", new PurchaseDto());
+		model.addAttribute("purchases", this.purchaseRepo.findAll());
+		return "purchaseList";
+	}
+
+	@PostMapping("/list")
+	public String listPost(PurchaseDto purchaseDto, Model model) {
+		model.addAttribute("purchases", this.purchaseRepo.findByDto(purchaseDto.getMonth(), purchaseDto.getName(),
+				purchaseDto.getMin(), purchaseDto.getMax()));
 		return "purchaseList";
 	}
 
@@ -48,8 +58,4 @@ public class PurchaseController {
 		return Months.getMonths();
 	}
 
-	@ModelAttribute("purchases")
-	public List<Purchase> getPurchases() {
-		return this.purchaseRepo.findAll();
-	}
 }

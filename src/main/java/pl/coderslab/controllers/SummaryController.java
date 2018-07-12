@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import pl.coderslab.entity.Paycheck;
 import pl.coderslab.entity.Purchase;
@@ -40,4 +41,10 @@ public class SummaryController {
 		model.addAttribute("balance", income.subtract(spendings));
 		return "summary";
 	}
+
+	@ModelAttribute("currentPurchases")
+	public List<Purchase> getCurrentPurchases() {
+		return purchaseRepo.findByMonth(Months.getCurrentMonth());
+	}
+
 }

@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style><%@include file="/WEB-INF/css/style.css"%></style>
 <title>paycheck list</title>
 </head>
 <body>
@@ -22,7 +23,7 @@
 	<a id="summary" href="http://localhost:8080/Home-Budget/">summary</a>
 	<br>
 	<a id="paycheckForm" class="form"
-		href="http://localhost:8080/Home-Budget/paycheck/form">paycheck
-		form</a>
+		href="http://localhost:8080/Home-Budget/paycheck/form">add
+		paycheck</a>
 </body>
 </html>
